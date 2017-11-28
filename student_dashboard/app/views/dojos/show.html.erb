@@ -1,0 +1,41 @@
+<h1><%= @dojo.branch %></h1>
+<div class="showarea">
+    <p>Addres: <%= @dojo.street %></p>
+    <p>City: <%= @dojo.city %> State: <%= @dojo.state %></p>
+</div>
+<div class="successarea">
+    <% if flash[:success] %>
+        <div class="success">
+            <% flash[:success].each do |msg| %>
+                <p><%= msg %></p>
+            <% end %>      
+        </div>
+    <% end %>
+</div>	
+<h3>Student Roster</h3>
+
+<table id="students">
+	<thead>
+		<th><p>First Name</p></th>
+		<th><p>Last Name</p></th>
+		<th><p>Email</p></th>
+		<th><p>Actions</p></th>
+	</thead>
+	<tbody>
+	<% @students.each do |student| %>
+		<tr>
+			<td><p><%= student.first_name %></p></td>
+			<td><p><%= student.last_name %></p></td>
+			<td><p><%= student.email %></p></td>
+			<td>
+                <p>
+                <a href="/dojos/<%= @dojo.id %>/students/<%= student.id %>">Show</a> |
+                <a href="/dojos/<%= @dojo.id %>/students/<%= student.id %>/edit">Edit</a> |
+				<a href="/dojos/<%= @dojo.id %>/students/<%= student.id %>" data-method="delete" data-confirm="Are you sure you want to delete this student?">Destroy </a>
+                </p>
+            </td>
+		</tr>
+	<% end %>		
+	</tbody>
+</table>
+<p class="link"> <a href="/dojos">Home</a> | <a href="/dojos/<%= @dojo.id %>/edit">Edit</a> <a href="/dojos/<%= @dojo.id %>/students/new">Add Student</a></p>

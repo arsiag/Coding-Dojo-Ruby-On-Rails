@@ -1,0 +1,12 @@
+
+<div class="formarea">
+    <h1>New user? <a href="/users/new">Register</a> </h1>
+    <h2>or</h2>
+    <h1>Login below:</h1>
+    <form action="/sessions" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <p>Email: <input class="longinput" type="text" id="Email" name = "email"> </p>
+        <p>Password: <input class="input" type="text" id="Password" name = "password"> </p>
+        <p><input class="login_button" type="submit" name="Log In" value="Log In"> </p>
+    </form>
+</div>

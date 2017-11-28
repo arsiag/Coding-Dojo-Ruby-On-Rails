@@ -1,0 +1,21 @@
+<div class="errorarea">
+    <% if flash[:errors] %>
+        <div class="error">
+            <% flash[:errors].each do |msg| %>
+                <p><%= msg %></p>
+            <% end %>
+        </div>
+    <% end %>
+</div>	
+<h1>New Dojo</h1>
+<div class="formarea">
+    <form action="/dojos" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <p>Branch: <input type="text" name=dojo[branch] value="<%= @dojo.branch %>"> </p>
+        <p>Street: <input type="text" name=dojo[street] value="<%= @dojo.street %>"> </p>
+        <p>City: <input type="text" name=dojo[city] value="<%= @dojo.city %>"> </p>
+        <p>State: <input type="text" name=dojo[state] value="<%= @dojo.state %>"> </p>
+        <input type="submit" name="Create" value="Create">	
+    </form>
+</div>
+<p class="link"> <a href="/dojos">Home</a> </p>

@@ -1,0 +1,36 @@
+<div class="successarea">
+    <% if flash[:success] %>
+        <div class="success">
+            <% flash[:success].each do |msg| %>
+                <p><%= msg %></p>
+            <% end %>      
+        </div>
+    <% end %>
+</div>	
+
+<h1>Listing <%= @count %> Dojos</h1>
+<table id="dojos">
+    <tr>
+        <th><p>Coding Dojo Brnach</p></th>
+        <th><p>Street</p></th>
+        <th><p>City</p></th>
+        <th><p>State</p></th>
+        <th>Actions</th>
+    </tr>
+    <% @dojos.each do |dj| %>
+    <tr>
+        <td><p><%= dj.branch %></p></td>
+        <td><p><%= dj.street %></p></td>
+        <td><p><%= dj.city %></p></td>
+        <td><p><%= dj.state %></p></td>
+        <td>
+            <p>
+            <a href="/dojos/<%= dj.id %>">Show</a>
+            <a href="/dojos/<%= dj.id %>/edit">Edit</a>
+            <%= link_to "Destroy", "dojos/#{dj.id}", data: { method: :delete, confirm: "Are you sure you want to delete this dojo?" } %>
+            </p>
+        </td>
+    </tr>
+    <% end %>
+</table>
+<p class="link"> <a href="/dojos/new">New Dojo</a> </p>

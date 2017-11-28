@@ -1,0 +1,93 @@
+// Place all the styles related to the Sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.header{
+    width: 1100px;
+    margin-left: 30px;
+}
+.errorarea{
+    width: 500px;
+    height: 100px;
+    margin-left: 30px;
+    overflow-y: hidden;
+}
+.successarea{
+    width: 500px;
+    height: 50px;
+    margin-left: 30px;
+    font-size: 150%;
+    overflow-y: hidden;
+}
+.formarea{
+    width: 300px;
+    margin-left: 30px;
+    overflow-y: hidden;
+}
+.showarea{
+    width: 600px;
+    margin-left: 30px;
+    overflow-y: hidden;
+}
+.leftshowarea{
+    width: 600px;
+    height: 1000px;
+    margin-left: 30px;
+    overflow-y: hidden;
+    display:inline-block
+}
+.rightshowarea{
+    width: 600px;
+    height: 1000px;
+    overflow-y: hidden;
+    display:inline-block
+}
+h1{
+    font-size: 200%;
+}
+.secret_content{
+    display: inline-block;
+    vertical-align: top;
+}
+.secret_delete{
+    display: inline-block;
+    vertical-align: bottom  ;
+    position: relative;
+    left: 20px;
+}
+.del_button{
+    width: 100px;
+    background-color: rgb(187, 40, 40);
+    color: white;
+}
+.crt_button{
+    width: 100px;
+    background-color: rgb(8, 104, 40);
+    color: white;
+}
+.like_button{
+    background-color: rgb(8, 104, 40);
+    color: white;
+}
+.logout_button, .login_button, .update_button{
+    float: right;
+    background-color: rgb(15, 231, 105);
+    width: 105px;
+}
+.input{
+    float: right;
+    width: 100px;
+}
+.longinput{
+    float: right;
+    width: 200px;
+}
+.link{
+    margin-top: 20px;
+    font-size: 120%;
+}
+.error {
+    color: red;
+}
+.success {
+    color: green;
+}

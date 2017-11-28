@@ -1,0 +1,35 @@
+<div class="header">
+    <h1>Hello <%= @user.name %></h1>
+    <p class="link"> <a href="/users/<%= @user.id %>/edit">Edit Profile</a> <a href="/secrets">All secrets</a> </p>
+</div>
+<div class=showarea>
+    <form action = "/secrets" method = "post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <h3>New Secret: <h3>
+        <p><textarea rows="5" cols="40" type="text" name="secret[content]"></textarea></p>
+        <input class="crt_button" type="submit" value = "Create Secret">
+    </form>
+</div>
+<div class=leftshowarea>
+    <h1>Your secrets: </h1>
+    <% @user.secrets.each do |secret| %>
+        <h2 class="secret_content"><%= secret.content %></h2>
+        <div class="secret_delete">
+            <% if secret.user == current_user %>
+                <form action = "/secrets/<%= secret.id %>" method = "post">
+                    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                    <input type="hidden" name="_method" value="delete">
+                    <input class="del_button" type = 'submit' value = "Delete Secret"> 
+                </form>
+            <% end %>
+        </div>
+        <h3><%= secret.likes.count %> likes</h3>
+    <% end %>
+</div>
+<div class=rightshowarea>
+<h1>Secrets Liked:</h1>
+    <% @user.secrets_liked.each do |secret| %>
+        <h2 class="secret_content"><%= secret.content %></h2>
+        <h3><%= secret.likes.count %> likes</h3>
+    <% end %>
+</div>

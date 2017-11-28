@@ -1,0 +1,13 @@
+<div id="container">
+	<% if flash[:success] %>
+  		<div id="success">
+  			<p><%= flash[:success] %></p>
+		</div>
+	<% end %>
+    <h2 id="submitted"> Submitted Information: </h2>
+    <p class="info"> Name: <%= @result['name'] %> </p>
+    <p class="info"> Dojo Location: <%= @result['location'] %> </p>
+    <p class="info"> Favorite Language: <%= @result['language'] %> </p>
+    <p class="info"> Comment: <%= @result['comment'] %> </p>
+    <p id="back"> <%= link_to "Go back", root_path %> </p>
+</div>
